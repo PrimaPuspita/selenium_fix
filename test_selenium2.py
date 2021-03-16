@@ -15,6 +15,8 @@ while len(stack) > 0 and len(result) < 5:
     elements = driver.find_elements_by_tag_name("a")
     for elem in elements:
         url = elem.get_attribute('href')
-        if url not in stack and url not in result or '#' not in url and 'https://www.techlistic.com/p/demo-selenium-practice.html' in url:
-            stack.append(url)
+        if url not in stack:
+            if url not in result: 
+                if stack in url:
+                    stack.append(url)
 print(result)
