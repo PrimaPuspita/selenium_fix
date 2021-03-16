@@ -16,7 +16,9 @@ while len(stack) > 0 and len(result) < 5:
     for elem in elements:
         url = elem.get_attribute('href')
         if url not in stack:
-            if url not in result: 
-                if stack in url:
-                    stack.append(url)
+            stack.append(url)
+        elif url not in result:
+            stack.append(url)
+        elif stack in url:
+            stack.append(url)
 print(result)
